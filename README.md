@@ -31,7 +31,7 @@ Documentation
 
 Rectangle supports 8 getters:
 
- *   int getLeft(): Get's the left-most point of the rectangle
+ *   `int getLeft()`: Get's the left-most point of the rectangle
  *   int getRight(): Get's the right-most point of the rectangle
  *   int getTop(): Get's the top-most point of the rectangle
  *   int getBottom(): Get's the bottom-most point of the rectangle
