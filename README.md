@@ -30,14 +30,14 @@ Documentation
 --------------------------
 
 Rectangle supports 8 getters:
- * `int getLeft()`: Get's the left-most point of the rectangle
- * `int getRight()`: Get's the right-most point of the rectangle
- * `int getTop()`: Get's the top-most point of the rectangle
- * `int getBottom()`: Get's the bottom-most point of the rectangle
- * `int getHeight()`: Get's the height of the rectangle
- * `int getWidth()`: Get's the width of the rectangle
- * `int getSize()`: Get's the size of the rectangle
- * `bool isEmpty()`: Get's a value spesifying wheater or not the rectangle is empty.
+ * int getLeft(): Get's the left-most point of the rectangle
+ * int getRight(): Get's the right-most point of the rectangle
+ * int getTop(): Get's the top-most point of the rectangle
+ * int getBottom(): Get's the bottom-most point of the rectangle
+ * int getHeight(): Get's the height of the rectangle
+ * int getWidth(): Get's the width of the rectangle
+ * int getSize(): Get's the size of the rectangle
+ * bool isEmpty(): Get's a value spesifying wheater or not the rectangle is empty.
 
 Also, to calculate intersection between 2 rectangles use the `Rectangle getIntersection(Rectangle rect)`-function.
 
