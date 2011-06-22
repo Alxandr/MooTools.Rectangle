@@ -37,22 +37,31 @@ var Rectangle = new Class({
     },
 
     getIntersection: function (rect) {
-        var a = this, b = rect;
-        var x = Math.max(a.getLeft(), b.getLeft());
-        var num2 = Math.min(a.getLeft() + a.getWidth(), b.getLeft() + b.getWidth());
-        var y = Math.max(a.getTop(), b.getTop());
-        var num4 = Math.min(a.getTop() + a.getHeight(), b.getTop() + b.getHeight());
-        if ((num2 >= x) && (num4 >= y)) {
-            return new Rectangle(x, y, num2 - x, num4 - y);
-        }
-        return Rectangle.Empty;
+        return Rectangle.Intersection(this, rect);
+    },
+    
+    intersectsWith: function(rect) {
+        return Rectangle.Intersects(this, rect);
     }
 });
 
 (function () {
     var empty = new Rectangle(0, 0, 0, 0);
     Rectangle.extend({
-        Empty: empty
+        Empty: empty,
+        Intersection: function(a, b) {
+            var x = Math.max(a.getLeft(), b.getLeft());
+            var num2 = Math.min(a.getLeft() + a.getWidth(), b.getLeft() + b.getWidth());
+            var y = Math.max(a.getTop(), b.getTop());
+            var num4 = Math.min(a.getTop() + a.getHeight(), b.getTop() + b.getHeight());
+            if ((num2 >= x) && (num4 >= y)) {
+                return new Rectangle(x, y, num2 - x, num4 - y);
+            }
+            return Rectangle.Empty;
+        },
+        Intersects: function(a, b) {
+            return ((((a.getLeft() < (b.getLeft() + b.getWidth())) && (b.getLeft() < (a.getLeft() + a.getWidth()))) && (a.getTop() < (b.getTop() + b.getHeight()))) && (b.getTop() < (a.getTop() + a.getHeight())));
+        }
     });
 })();
 
